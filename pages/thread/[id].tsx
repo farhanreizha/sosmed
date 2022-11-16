@@ -1,12 +1,12 @@
+import Thread from '@components/thread/Thread'
 import Header from '@components/layout/Header'
-import Navigation from '@components/navigation'
-import CreateThread from '@components/thread/CreateThread'
-import EditThread from '@components/thread/EditThread'
-import ThreadList from '@components/thread/ThreadList'
-import Trending from '@components/trending'
+import CommentList from '@components/comment/CommentList'
+import EditComment from '@components/comment/EditComment'
 import styles from '@styles/Home.module.css'
+import Navigation from '@components/navigation'
+import Trending from '@components/trending'
 
-export default function Home() {
+const ThreadDetail = () => {
   return (
     <>
       {/* Content */}
@@ -17,12 +17,12 @@ export default function Home() {
 
           {/* Main */}
           <section className='col-span-full lg:col-span-8 lg:border-x divide-y divide-slate-200 h-screen'>
-            {/* Form Create Thread */}
-            <CreateThread />
-
             {/* Card Thread */}
-            <ThreadList />
-            <EditThread />
+            <Thread />
+
+            {/* Comment */}
+            <CommentList />
+            <EditComment />
           </section>
 
           {/* Trending */}
@@ -32,3 +32,4 @@ export default function Home() {
     </>
   )
 }
+export default ThreadDetail
